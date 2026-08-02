@@ -1,382 +1,89 @@
-/* -----------------------------
-   General
------------------------------ */
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding-top: 80px;
-    background: #f4f4f4;
-    color: #333;
+  font-family: sans-serif;
+  margin-top: 100px;
+  background-color: lightgray;
 }
 
-/* -----------------------------
-   Header (same style as before)
------------------------------ */
-
-#top-bar,
-header {
-    background-color: darkblue;
-    color: lightgray;
-    height: 80px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 25px;
-
-    box-sizing: border-box;
-
-    z-index: 1000;
+#top-bar {
+  background-color: darkblue;
+  color: lightgray;
+  padding: 10px 15px 10px 10px;
+  font-size: 24px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between; /* splits into 2 groups: name | nav-buttons */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#name,
-.logo {
-    font-size: 30px;
-    font-weight: bold;
+#nav-buttons {
+  display: flex;
+  gap: 15px; /* controls spacing between Projects and Contact only */
 }
 
-/* -----------------------------
-   Navigation
------------------------------ */
-
-#nav-buttons,
-nav {
-    display: flex;
-    gap: 15px;
+#name {
+  font-size: 24px;
+  color: lightgray;
+  padding: 10px 15px 10px 10px;
+  top:0;
+  left:0;
 }
 
-/* Existing button class */
-
-.button,
-nav a,
-.main-button,
-.secondary-button {
-
-    display: inline-block;
-
-    text-decoration: none;
-
-    background: darkblue;
-
-    color: lightgray;
-
-    padding: 10px 20px;
-
-    border-radius: 6px;
-
-    transition: .25s;
-
-    font-size: 16px;
-
+#message {
+  font-size: 32px;
+  width: 100%;
+  color: red;
 }
 
-/* Same hover effect */
-
-.button:hover,
-nav a:hover,
-.main-button:hover,
-.secondary-button:hover {
-
-    background: blue;
-    color: white;
-
+img{
+  width: 300px;
+  height: auto;
+  padding: 0px 10px;
 }
 
-/* -----------------------------
-   Hero Section
------------------------------ */
-
-.hero{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:60px 30px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:60px;
-
+.button {
+  display: inline-block;
+  background-color:darkblue;
+  color: lightgray;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.profile{
-
-    width:300px;
-
-    border-radius:15px;
-
-    box-shadow:0px 10px 25px rgba(0,0,0,.25);
-
+.button:hover {
+  background-color: blue;
+  color:lightgray;
 }
 
-.hero-text{
-
-    flex:1;
-
+#thule-imgs {
+  display: flex;
+  gap: 15px;
+  justify-content: left;
 }
-
-.hero-text h1{
-
-    font-size:48px;
-
-    margin-bottom:10px;
-
-}
-
-.hero-text h2{
-
-    color:#666;
-
-    margin-bottom:25px;
-
-}
-
-.hero-text p{
-
-    line-height:1.7;
-
-    font-size:18px;
-
-}
-
-.buttons{
-
-    margin-top:35px;
-
-    display:flex;
-
-    gap:15px;
-
-}
-
-/* -----------------------------
-   Sections
------------------------------ */
-
-section{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:60px 30px;
-
-}
-
-section h2{
-
-    font-size:36px;
-
-    margin-bottom:25px;
-
-}
-
-/* -----------------------------
-   Featured Projects
------------------------------ */
-
-.project-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-    gap:35px;
-
-}
-
-.card{
-
-    background:white;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-    transition:.25s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-6px);
-
-}
-
-.card img{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-    padding:0;
-
-}
-
-.card h3{
-
-    padding:20px 20px 10px;
-
-}
-
-.card p{
-
-    padding:0 20px;
-
-    line-height:1.6;
-
-}
-
-.card a{
-
-    display:inline-block;
-
-    padding:20px;
-
-    text-decoration:none;
-
-    color:darkblue;
-
-    font-weight:bold;
-
-}
-
-/* -----------------------------
-   Skills
------------------------------ */
-
-.skill-list{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-}
-
-.skill-list span{
-
-    background:darkblue;
-
-    color:white;
-
-    padding:10px 18px;
-
-    border-radius:20px;
-
-}
-
-/* -----------------------------
-   Footer
------------------------------ */
-
-footer{
-
-    background:#222;
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px;
-
-    margin-top:60px;
-
-}
-
-/* -----------------------------
-   Existing Project Page
-   (kept from your current CSS)
------------------------------ */
-
-#thule-imgs,
 #boat-imgs {
-
-    display:flex;
-
-    gap:15px;
-
-    justify-content:left;
-
+  display: flex;
+  gap: 15px;
+  justify-content: left;
 }
 
-.img-block{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
+.img-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.img-block img{
-
-    width:auto;
-
-    height:350px;
-
+.img-block img {
+  width: auto;
+  height: 350px;
 }
 
-.img-block p{
-
-    font-size:14px;
-
-    margin-top:5px;
-
-}
-
-/* -----------------------------
-   Responsive
------------------------------ */
-
-@media (max-width:800px){
-
-.hero{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-.buttons{
-
-    justify-content:center;
-
-}
-
-.profile{
-
-    width:220px;
-
-}
-
-.hero-text h1{
-
-    font-size:36px;
-
-}
-
-section{
-
-    padding:40px 20px;
-
-}
-
+.img-block p {
+  font-size: 14px;
+  margin-top: 5px;
 }
