@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  margin-top: 100px;
+  background-color: lightgray;
+}
+
+#top-bar {
+  background-color: darkblue;
+  color: lightgray;
+  padding: 10px 15px 10px 10px;
+  font-size: 24px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between; /* splits into 2 groups: name | nav-buttons */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#nav-buttons {
+  display: flex;
+  gap: 15px; /* controls spacing between Projects and Contact only */
+}
+
+#name {
+  font-size: 24px;
+  color: lightgray;
+  padding: 10px 15px 10px 10px;
+  top:0;
+  left:0;
+}
+
+#message {
+  font-size: 32px;
+  width: 100%;
+  color: red;
+}
+
+img{
+  width: 300px;
+  height: auto;
+  padding: 0px 10px;
+}
+
+.button {
+  display: inline-block;
+  background-color:darkblue;
+  color: lightgray;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: blue;
+  color:lightgray;
+}
+
+#thule-imgs {
+  display: flex;
+  gap: 15px;
+  justify-content: left;
+}
+#boat-imgs {
+  display: flex;
+  gap: 15px;
+  justify-content: left;
+}
+
+.img-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-block img {
+  width: auto;
+  height: 350px;
+}
+
+.img-block p {
+  font-size: 14px;
+  margin-top: 5px;
+}
