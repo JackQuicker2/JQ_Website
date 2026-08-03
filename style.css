@@ -4,9 +4,13 @@ body {
   background-color: lightgray;
 }
 #footer {
-  position: fixed
-  left: 50%;
-  bottom: 20px;
+  position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+
+    color: black;
+    font-size: 14px;
 }
 #top-bar {
   background-color: darkblue;
