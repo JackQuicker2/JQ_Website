@@ -48,7 +48,7 @@ body {
 }
 
 img{
-  width: 300px;
+  width: 350px;
   height: auto;
   padding: 0px 10px;
 }
@@ -69,12 +69,8 @@ img{
   color:lightgray;
 }
 
-#thule-imgs {
-  display: flex;
-  gap: 15px;
-  justify-content: left;
-}
-#boat-imgs {
+
+#block-imgs {
   display: flex;
   gap: 15px;
   justify-content: left;
