@@ -171,24 +171,24 @@ body {
 }
 
 .project-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  align-items: start;
+  display: flex;
+  gap: 15px;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .img-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  flex: 0 0 auto;
 }
 
 .img-block img {
-  width: 100%;
-  height: 320px;
+  width: auto;
+  height: 350px;
   max-width: 100%;
-  object-fit: cover;
   padding: 0;
   border-radius: 8px;
 }
@@ -207,7 +207,8 @@ body {
 
 @media (max-width: 700px) {
   .project-gallery {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
