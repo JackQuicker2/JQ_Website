@@ -12,13 +12,13 @@
 }
 
 body {
-  margin: 0;
-  padding: 100px 16px 40px;
   font-family: sans-serif;
+  margin: 100px 0 0;
   background-color: var(--secondary);
   color: var(--text);
 }
 
+#top-bar,
 .top-bar {
   display: flex;
   align-items: center;
@@ -28,17 +28,20 @@ body {
   left: 0;
   width: 100%;
   height: 80px;
-  padding: 10px 15px;
+  padding: 10px 15px 10px 10px;
   background-color: var(--primary);
   color: var(--secondary);
   font-size: 24px;
+  box-sizing: border-box;
 }
 
+#name,
 .site-title {
   padding: 10px 15px 10px 10px;
   color: var(--secondary);
 }
 
+#nav-buttons,
 .nav-buttons {
   display: flex;
   gap: 15px;
@@ -61,21 +64,27 @@ body {
   color: var(--secondary);
 }
 
+img {
+  width: 350px;
+  height: auto;
+  padding: 0 10px;
+}
+
 .home-content,
 .content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 10px 12px 20px;
-}
-
-.content {
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 10px 12px 20px 12px;
 }
 
 .home-content {
   align-items: center;
+}
+
+.content {
+  max-width: none;
+  margin: 0;
 }
 
 .intro-section {
@@ -87,6 +96,7 @@ body {
   margin-bottom: 6px;
 }
 
+#profile-img,
 .profile-img {
   width: 260px;
   height: auto;
@@ -132,7 +142,8 @@ body {
   margin: 0;
 }
 
-.featured-image {
+.featured-image,
+#boat-car-img {
   display: block;
   width: 100%;
   height: auto;
@@ -160,7 +171,9 @@ body {
 }
 
 .featured-project-link:hover .featured-image,
-.featured-project-link:focus-within .featured-image {
+.featured-project-link:focus-within .featured-image,
+.featured-project-link:hover #boat-car-img,
+.featured-project-link:focus-within #boat-car-img {
   filter: brightness(0.7) saturate(0.9);
 }
 
@@ -170,7 +183,7 @@ body {
   transform: translateY(0);
 }
 
-.project-gallery {
+.projects-page .project-gallery {
   display: flex;
   gap: 15px;
   justify-content: left;
@@ -178,14 +191,14 @@ body {
   flex-wrap: wrap;
 }
 
-.img-block {
+.projects-page .img-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 0 0 auto;
 }
 
-.img-block img {
+.projects-page .img-block img {
   width: auto;
   height: 350px;
   max-width: 100%;
@@ -193,20 +206,25 @@ body {
   border-radius: 8px;
 }
 
-.img-block p {
+.projects-page .img-block p {
   font-size: 14px;
   margin: 5px 0 0;
   text-align: center;
 }
 
-.project-description {
+.projects-page .project-description {
   padding: 10px;
   margin: 0;
   line-height: 1.6;
 }
 
 @media (max-width: 700px) {
-  .project-gallery {
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-page .project-gallery {
     flex-direction: column;
     align-items: center;
   }
@@ -246,6 +264,7 @@ body {
   margin-top: 12px;
 }
 
+#footer,
 .footer {
   text-align: center;
   color: #000;
