@@ -47,6 +47,50 @@ body {
   gap: 15px;
 }
 
+.nav-item {
+  position: relative;
+}
+
+.dropdown .button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 220px;
+  background-color: var(--white);
+  color: var(--text);
+  border: 1px solid rgba(0, 0, 139, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background-color: rgba(0, 0, 139, 0.08);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
 .button {
   display: inline-block;
   background-color: var(--primary);
@@ -257,11 +301,32 @@ img {
   line-height: 1.5;
 }
 
-.contact-links {
+.filter-bar {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  border: 1px solid var(--primary);
+  background-color: var(--white);
+  color: var(--primary);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.experience-card.hidden {
+  display: none;
 }
 
 #footer,

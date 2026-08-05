@@ -14,22 +14,109 @@
       <a href="projects.html" class="button">Projects</a>
       <a href="about.html" class="button">About Me</a>
       <a href="contact.html" class="button">Contact</a>
-      <a href="experience.html" class="button">Experience</a>
+      <div class="nav-item dropdown">
+        <a href="experience.html" class="button" aria-haspopup="true">Experience</a>
+        <div class="dropdown-menu">
+          <a href="experience.html?filter=all">All Experience</a>
+          <a href="experience.html?filter=work">Work</a>
+          <a href="experience.html?filter=engineering">Relevant Engineering Work</a>
+          <a href="experience.html?filter=school">School Work</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="content">
-    <div class="experience-card">
+    <div class="filter-bar">
+      <button class="filter-button active" type="button" data-filter="all">All</button>
+      <button class="filter-button" type="button" data-filter="work">Work</button>
+      <button class="filter-button" type="button" data-filter="engineering">Relevant Engineering Work</button>
+      <button class="filter-button" type="button" data-filter="school">School</button>
+    </div>
+
+    <div class="experience-card" data-category="engineering">
       <h3>HD Medical Internship — Summer 2026</h3>
       <p><strong>Role:</strong> Engineering and product development intern</p>
       <ul>
         <li>Navigated the product development process for a medical device, including documentation and document control.</li>
         <li>Gained experience with prototyping, testing, and validation procedures.</li>
         <li>Performed production rework on 600+ units.</li>
-        <li>Design, CAD modeling, and manufacturing of multi-part silicone molds. Silicone components with comolded features.</li>
+        <li>Designed CAD models and manufactured multi-part silicone molds with comolded features.</li>
       </ul>
     </div>
 
+    <div class="experience-card" data-category="work">
+      <h3>Sales Specialist — Sept 2025-Present</h3>
+      <p><strong>Company:</strong> Skirack, Burlington, VT</p>
+      <ul>
+        <li>Assisted customers with bike, ski, outdoor equipment, and apparel selection.</li>
+        <li>Provided product guidance, support, and service for seasonal shoppers.</li>
+        <li>Helped open and close the store, including restocking, cleaning, and floor maintenance.</li>
+      </ul>
+    </div>
+
+    <div class="experience-card" data-category="work">
+      <h3>Health Desk Attendant — Aug 2023-Aug 2025</h3>
+      <p><strong>Company:</strong> Quechee Club, Quechee, VT</p>
+      <ul>
+        <li>Managed member and guest check-ins for gym, fitness classes, pool, and lake access.</li>
+        <li>Conducted facility tours and supported daily customer inquiries.</li>
+        <li>Maintained towels, cleaned fitness areas, and ensured an organized facility.</li>
+      </ul>
+    </div>
+
+    <div class="experience-card" data-category="work">
+      <h3>Customer Service Associate — Nov 2022-Mar 2023</h3>
+      <p><strong>Company:</strong> Union Arena, Woodstock, VT</p>
+      <ul>
+        <li>Operated the snack bar cashier station and handled customer transactions.</li>
+        <li>Prepared food items and maintained a clean service area.</li>
+        <li>Supervised ice skating and skate rental operations while assisting guests.</li>
+      </ul>
+    </div>
+
+    <div class="experience-card" data-category="work">
+      <h3>Volunteer Ski Patrol — Dec 2020-Apr 2023</h3>
+      <p><strong>Organization:</strong> Saskadena Six, Pomfret, VT</p>
+      <ul>
+        <li>Provided on-mountain safety, rescue support, and first aid for guests.</li>
+        <li>Assisted skiers and snowboarders with trail information and emergency response.</li>
+        <li>Maintained Outdoor Emergency Care (OEC) and CPR certifications as a National Ski Patrol member.</li>
+      </ul>
+    </div>
+ <div class="experience-card" data-category="school">
+      <h3>Relevant Courses Fall 2026</h3>
+      <p><strong>Year:</strong> Sophomore</p>
+      <ul>
+        <li>Physics II for Engineers</li>
+        <li>Fundamentals of Mathematics</li>
+        <li>Statics</li>
+        <li>Thermodynamics</li>
+        <li>Statistics for Engineers</li>
+      </ul>
+    </div>
+    <div class="experience-card" data-category="school">
+      <h3>Relevant Courses Spring 2026</h3>
+      <p><strong>Year:</strong> Freshman</p>
+      <ul>
+        <li>Advanced Engineering Mathematics</li>
+        <li>Applied Linear Algebra</li>
+        <li>Physics I for Engineers</li>
+        <li>First Year Mechanical Engineering Design Experience</li>
+        <li>Introduction to Robotics and Programming</li>
+        <li>Engineering Shop Experience</li>
+      </ul>
+    </div>
+    <div class="experience-card" data-category="school">
+      <h3>Relevant Courses Fall 2025</h3>
+      <p><strong>Year:</strong> Freshman</p>
+      <ul>
+        <li>Intermediate Computer Science</li>
+        <li>Calculus III</li>
+        <li>Chemistry I</li>
+        <li>Graphical Communication(CAD)</li>
+      </ul>
+    </div>
   </div>
   
   <p id="footer">Jack Quicker © 2026 </p>
