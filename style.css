@@ -297,6 +297,58 @@ img {
   line-height: 1.6;
 }
 
+.projects-page .project-game-hub {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.projects-page .project-game-hub .img-block {
+  max-width: 240px;
+}
+.projects-page .project-action,
+.projects-page .project-action-game {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 420px;
+  gap: 16px;
+}
+.projects-page .project-action .project-description,
+.projects-page .project-action-game .project-description {
+  margin: 0;
+}
+.projects-page .project-action .blue-button,
+.projects-page .project-action-game .blue-button {
+  background: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 26px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+}
+.projects-page .project-action .blue-button:hover,
+.projects-page .project-action .blue-button:focus-visible,
+.projects-page .project-action-game .blue-button:hover,
+.projects-page .project-action-game .blue-button:focus-visible {
+  background: #2563eb;
+}
+.projects-page .project-action .blue-button:disabled,
+.projects-page .project-action-game .blue-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.projects-page .project-game-hub .img-block img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  min-height: 160px;
+}
+
 @media (max-width: 700px) {
   .intro-section {
     flex-direction: column;

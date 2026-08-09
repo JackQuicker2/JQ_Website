@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
           <a href="experience.html?filter=all">All Experience</a>
           <a href="experience.html?filter=engineering">Engineering Work</a>
           <a href="experience.html?filter=work">Work</a>
-          <a href="experience.html?filter=school">School Work</a>
+          <a href="experience.html?filter=education">Education</a>
         </div>
       </div>
     </div>
@@ -44,6 +44,140 @@
 </div>
     <p class = "project-description">Converted Falmari, a Catalina 30 tall rig sailboat from a 25hp Universal diesel engine to electric using the ThunderStruckEV sailboat kit. This kit came with a 10kW AC motor, Curtis 1232SE motor controller, throttle, and key. Batteries are Porsche Cayenne hybrid cells with DALY Bluetooth Smart BMS.</p>
 
+    <h3>Balloon-Powered Car Design</h3>
+    <div class="project-gallery">
+  <div class="img-block">
+    <img src="images/balloon-car.jpg" alt="balloon powered car" id="balloon-car-img">
+    <p>College balloon car prototype</p>
+  </div>
+</div>
+    <p class = "project-description">Designed and built a balloon-powered car project for first-year mechanical engineering design experience. Focused on lightweight and efficient design. Using a cardboard chassis and 3d printed wheels, my team placed 2nd in speed and 3rd in distance at the competition. The nozzle was designed in SOLIDWORKS and the frame in AutoCAD</p>
+
+    <h3>Spanish Conjugation Game</h3>
+    <div class="project-gallery project-game-hub">
+      <div class="img-block">
+        <img src="Game_1.png" alt="Spanish Game preview" id="spanish-game-filler-1">
+        <p>Spanish Game preview 1</p>
+      </div>
+      <div class="img-block">
+        <img src="Game_2.png" alt="Spanish Game preview" id="spanish-game-filler-2">
+        <p>Spanish Game preview 2</p>
+      </div>
+      <div class="img-block">
+        <img src="Game_3.png" alt="Spanish Game preview" id="spanish-game-filler-3">
+        <p>Spanish Game preview 3</p>
+      </div>
+    </div>
+    <div class="project-action project-action-game">
+      <p class="project-description">In preparation for a family trip to Mallorca, Spain I built an interactive Spanish game to brush up on my Spanish, and give me a way to practice on the way there.</p>
+      <button id="load-spanish-game" class="button blue-button">Load Spanish Game</button>
+    </div>
+
+    <div id="spanish-game-overlay" class="spanish-game-overlay" aria-hidden="true">
+      <div class="spanish-game-overlay-panel">
+        <div class="overlay-header">
+          <h2>Spanish Game</h2>
+          <button id="close-spanish-game" class="button close-button" type="button">Close</button>
+        </div>
+        <div id="spanish-game-root" class="spanish-game-root"></div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const images = [
+          'images/boat-motor.png',
+          'images/jack-img.PNG',
+          'images/jack-painting.PNG',
+          'images/captain-jack.jpg',
+          'images/balloon-car.jpg',
+          'images/thule-top.PNG',
+          'images/thule-back.PNG',
+          'images/thule-broken.jpg',
+          'images/robot-elevator-up.jpg',
+          'images/robot-elevator-down.jpg',
+          'images/robot-trophy.jpg',
+          'images/frank-front.jpg',
+          'images/frank-back.jpg',
+          'images/frank-shooter.PNG',
+          'images/bridge-good.jpg',
+          'images/bridge-bad.jpg',
+          'images/jack-tower.jpg',
+        ];
+        const filler = document.getElementById('spanish-game-filler');
+        if (filler) {
+          filler.src = images[Math.floor(Math.random() * images.length)];
+        }
+
+        const button = document.getElementById('load-spanish-game');
+        const overlay = document.getElementById('spanish-game-overlay');
+        const root = document.getElementById('spanish-game-root');
+        const closeButton = document.getElementById('close-spanish-game');
+        let loaded = false;
+
+        function showOverlay() {
+          overlay.style.display = 'flex';
+          overlay.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('no-scroll');
+        }
+
+        function hideOverlay() {
+          overlay.style.display = 'none';
+          overlay.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('no-scroll');
+        }
+
+        if (button) {
+          button.addEventListener('click', function() {
+            if (loaded) {
+              showOverlay();
+              return;
+            }
+            loaded = true;
+            button.disabled = true;
+            button.textContent = 'Loading the Spanish game...';
+            showOverlay();
+
+            const cssLink = document.createElement('link');
+            cssLink.rel = 'stylesheet';
+            cssLink.href = 'spanish-game/spanish-game.css';
+            document.head.appendChild(cssLink);
+
+            const loadGameScript = function() {
+              const script = document.createElement('script');
+              script.src = 'spanish-game/spanish-game.js';
+              script.defer = true;
+              script.onload = function() {
+                if (typeof startApp === 'function') {
+                  startApp('spanish-game-root');
+                  button.textContent = 'Open Spanish Game';
+                  button.disabled = false;
+                } else {
+                  button.textContent = 'Game failed to load';
+                  button.disabled = false;
+                }
+              };
+              script.onerror = function() {
+                button.textContent = 'Failed to load game';
+                button.disabled = false;
+              };
+              document.body.appendChild(script);
+            };
+
+            const vocabScript = document.createElement('script');
+            vocabScript.src = 'spanish-game/vocabulary.js';
+            vocabScript.defer = true;
+            vocabScript.onload = loadGameScript;
+            vocabScript.onerror = loadGameScript;
+            document.body.appendChild(vocabScript);
+          });
+        }
+
+        if (closeButton) {
+          closeButton.addEventListener('click', hideOverlay);
+        }
+      })();
+    </script>
     <h3>3D Printed Replacement Cover for Thule Bike Rack</h3>
     <div class="project-gallery">
   <div class="img-block">
@@ -115,6 +249,6 @@
     <p class = "project-description">Engaged in numerous wooden civil projects including popsicle stick bridges and jenga towers. In 5th and 6th grade I participated in a school club that made a popsicle stick bridge for a statewide school competition. In 6th grade my team placed 1st in aesthetics, and supported 800+ lbs.</p>
   </div>
   <p class="footer">Jack Quicker © 2026 </p>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
